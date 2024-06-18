@@ -1,0 +1,314 @@
+All of these features can be used in blocks.lua, regions.lua, or factions.lua. Some lof them are file specific
+
+Features for features= :
+
+ASSEMBLER, --Makes a block with the COMMAND feature able to asssemble itself when you change design. it also makes your ship repair itself
+AUTOFIRE, --Makes a cannon autofire when there is a ship nearby
+CANNON, --Makes the block able to shoot
+CANNON_BOOST, --Makes a block a cannon booster like the ones in tinkrell
+CHARGING, --Makes a block with the cannon fetures require charging the weapon, also works with lasers
+COMMAND, --Converts your block into a command module which generally also uses the TRACTOR, GENERATOR and ASSEMBLEr features to make it playable
+DEACTIVATES, --Makes your command module able to deactivate when an enemy ship destroys it. Kinda like when an enemy destroys a one of yout stations
+ENVIRONMENTAL, --Makes your block able to grow plants.
+EXPLODE, --Makes your block well, explode (i think)
+FACTORY, --Makes a block able produce ships
+FREERES, --Disables R dropping from your block
+GENERATOR, --Makes your block able to produce energy
+INTLINES, --Makes your block not have the border lines
+INVISIBLE, --Makes your block invisible!
+INVULNERABLE, --Makes your block invincible!
+LASER, --Makes your block able to shoot a laser
+LAUNCHER, --Makes your block able to launch and generate another block
+MELEE, --Makes your block able to destroy other blocks from touching them, like the sentinel armor plates
+NOCLIP, --Makes the block able to clip through everything, can be used with the INVISIBLE FEATURE to make them have no collision
+NOREGEN, --Removes the ability to regenerate from the block
+PHOTOSYNTH, --Makes your block a plant that uses solar energy to generate R, why would you put this on a block, it is busted, DON'T EVEN TRY IT
+REGROWER, --Makes your block able to regrow itself like plants, they expand then they get converted into R (when they have the seed fature on) to then regrow and expand then they get converted into R (when they have the seed fature on) to then regrow and expand, and you know what's next
+ROOT, --Makes your block able to be planted on asteroids
+SEED, --Makes your block a seed, so they can convert into R
+SELFFACTORY, --I don't even know
+SHIELD, --Makes your block project a bubble around it,.
+TELEPORTER, --Flies.
+TELESPAWN, --I don't know, i think it is a feature that got scrapped
+THRUSTER, --Makes your block a thruster, what else can i say.
+TORQUER, --Makes your block have a rotation system inside that can manipulate space to make your ship rotate without needing a force, nah it is just pure magic.
+TRACTOR, --Makes your block able to collect R
+TURRET, --Makes a cannon or laser able to turn around their cannon or laser emitter, idk
+
+
+Block built-in features
+    ident = 0,
+    offset = {0, 0},
+    angle = 0,
+    command = {},
+    persistentIdent = 0,
+    bindingId = 0,
+    features = {},
+    lifetime = -1,
+    growFrac = 1,
+    health = 100,
+    growFeatures = {},
+    launchFeatures = {},
+    explodeFaction = 0,
+    launchLifetime = -1,
+    launchResources = 0,
+    capacity = 0,
+    growRate = 3.25,
+    fillColor = 0x2d0833,
+    fillColor1 = 0,
+    lineColor = 0xffffff,
+    thrusterColor = 0xece1c6,
+    thrusterColor1 = 0,
+    replicateBlock = {},
+    cannon = {},
+    laser = {},
+    shield = {},
+    group = 0,
+    shape = "",
+    scale = 1,
+    name = "",
+    points = 0,
+    durability = 1,
+    armor = 0, -- Never recommended. Included for completeness.
+    density = 0.1,
+    blurb = "",
+    powerCapacity = 0,
+    thrusterForce = 10000,
+    thrusterBoost = 2,
+    thrusterBoostTime = 0.2,
+    torquerTorque = 10000,
+    boost = {},
+    replicateTime = 1,
+    turretSpeed = 6,
+    turretLimit = 6.283,
+    generatorCapacityPerSec = 0,
+    explodeDamage = 51,
+    explodeRadius = 30,
+    explodeStdDev = 0,
+    deathFeatures = {},
+    launchSpeed = 100,
+    launcherPower = 0,
+    launcherSpeed = 0,
+    launcherOutSpeed = 0,
+    launcherAngVel = 0,
+    tractorRange = 400,
+    photosynthPerSec = 1,
+    seedLifetime = 60,
+    chargeMaxTime = 1,
+    chargeMin = 0.1,
+    teleporterPower = 4,
+    teleporterRadius = 0,
+    meleeDamage = 5,
+    sort = 0,
+    barrelSize = {0, 0},
+    barrelCount = 0,
+    barrelTaper = 1,
+    elasticity = 0.4,
+}
+
+Command Block feature
+    flags = {},
+    ident = 0,
+    parentIdent = 0,
+    faction = 0,
+    resources = 0,
+    resourceCapacity = 0,
+    energy = 0,
+    sensorRadius = 2200,
+    disruptTime = 1,
+    currentChild = -1,
+    destination = {0, 0},
+    objective = 0,
+    blueprint = {},
+    nextprint = {},
+    children = {},
+
+
+Laser Block Feature
+    pulsesPerSec = 0,
+    pulsesPerBurst = 1,
+    explosive = {},
+    burstyness = 0,
+    pulseAvailability = 0,
+    decay = 0.35,
+    power = 0,
+    width = 0,
+    damage = 0,
+    color = 0xffffff,
+    range = 0,
+    explodeRadius = 0,
+    immobilizeForce = 0,
+    linearForce = 0,
+    barrelTaper = 1,
+
+
+Cannon Block Feature
+    roundsPerSec = 0,
+    roundsPerBurst = 1,
+    explosive = {},
+    pattern = {},
+    burstyness = 0,
+    muzzleVel = 0,
+    spread = 0,
+    rangeStdDev = 0,
+    power = 0,
+    damage = 0,
+    range = 0,
+    explodeRadius = 0,
+    color = 0xffffff,
+    projectileSize = 0,
+    barrelTaper = 1,
+    fragment = {},
+
+
+CannonBooster Block Feature
+
+    roundsPerSec = {1, 0},
+    muzzleVel = {1, 0},
+    power = {1, 0},
+    damage = {1, 0},
+    range = {1, 0},
+    explodeRadius = {1, 0},
+    spread = {1, 0},
+
+
+Shield features
+    strength = 100,
+    armor = 0, -- Never recommended. Included for completeness.
+    regen = 20,
+    delay = 3,
+    radius = 40,
+    color = 0,
+    lineColor = 0,
+    damagedColor = 0,
+    power = 1,
+
+
+
+Region features
+    ident = 0,
+    color = 0,
+    faction = 0,
+    count = 1,
+    position = {0, 0},
+    radius = {1, 1},
+    totalSize = {0, 0},
+    type = 0,
+    fleets = {},
+    fleetCount = {{8, 15}},
+    fleetFraction = 0.75,
+    fortress = {},
+    fortressCount = {3, 6},
+    fortressRadius = {500, 500},
+    ambient = {},
+    unique = {},
+    uniqueFraction = 0.25,
+    asteroidDensity = {0, 0.4},
+    asteroidSize = {0, 0},
+    asteroidFlags = {},
+    subregions = {},
+
+
+
+Shapes of the blocks
+    SQUARE = "SQUARE",
+    OCTAGON = "OCTAGON",
+    THRUSTER = "THRUSTER",
+    CANNON = "CANNON",
+    MISSILE = "MISSILE",
+    RECT = "RECT",
+    HEXAGON = "HEXAGON",
+    TRI = "TRI",
+    COMMAND = "COMMAND",
+    SENSOR = "SENSOR",
+    WING = "WING",
+    ADAPTER = "ADAPTER",
+    PENTAGON = "PENTAGON",
+    RHOMBUS_72_108 = "RHOMBUS_72_108",
+    RHOMBUS_36_144 = "RHOMBUS_36_144",
+    THRUSTER_PENT = "THRUSTER_PENT",
+    DISH_WEAPON = "DISH_WEAPON",
+    DISH_THRUSTER = "DISH_THRUSTER",
+    RIGHT_TRI_22_5L = "RIGHT_TRI_22_5L",
+    RIGHT_TRI_22_5R = "RIGHT_TRI_22_5R",
+    SEED_1 = "SEED_1",
+    SEED_2 = "SEED_2",
+    SEED_3 = "SEED_3",
+    SEED_4 = "SEED_4",
+    RECT_LONG_NARROW = "RECT_LONG_NARROW",
+    RECT_LAUNCHER = "RECT_LAUNCHER",
+    RECT_CANNON = "RECT_CANNON",
+    RECT_CANNON_BOOST = "RECT_CANNON_BOOST",
+    RECT_LONG = "RECT_LONG",
+    ISOTRI_3 = "ISOTRI_3",
+    ISOTRI_25_WEAPON = "ISOTRI_25_WEAPON",
+    NONAGON = "NONAGON",
+    ISOTRI_80 = "ISOTRI_80",
+    THRUSTER_RECT = "THRUSTER_RECT",
+    SQUARE_HALF = "SQUARE_HALF",
+    SQUARE_LAUNCHER = "SQUARE_LAUNCHER",
+    SQUARE_MISSILE = "SQUARE_MISSILE",
+    RIGHT_TRI_30L = "RIGHT_TRI_30L",
+    RIGHT_TRI_30R = "RIGHT_TRI_30R",
+    OCTAGON_1 = "OCTAGON_1",
+    SQUARE_1 = "SQUARE_1",
+    CANNON2 = "CANNON2",
+    RECT_V1 = "RECT_V1",
+    MISSILE_LAUNCHER = "MISSILE_LAUNCHER",
+    MISSILE_SHORT = "MISSILE_SHORT",
+    COMMAND_MISSILE = "COMMAND_MISSILE",
+
+
+Command module flags
+    NONE = "NONE",
+    METAMORPHOSIS = "METAMORPHOSIS",
+    FOLLOWER = "FOLLOWER",
+    ATTACK = "ATTACK",
+    FLOCKING = "FLOCKING",
+    RECKLESS = "RECKLESS",
+    AGGRESSIVE = "AGGRESSIVE",
+    CAUTIOUS = "CAUTIOUS",
+    SOCIAL = "SOCIAL",
+    PEACEFUL = "PEACEFUL",
+    WANDER = "WANDER",
+    HATES_PLANTS = "HATES_PLANTS",
+    FORGIVING = "FORGIVING",
+    TRACTOR_TRANSIENT = "TRACTOR_TRANSIENT",
+    DODGES = "DODGES",
+    RIPPLE_FIRE = "RIPPLE_FIRE",
+    SPREAD_FIRE = "SPREAD_FIRE",
+    BAD_AIM = "BAD_AIM",
+    POINT_DEFENSE = "POINT_DEFENSE",
+    INACTIVE = "INACTIVE",
+    SMART_FIRE = "SMART_FIRE",
+    NO_PARENT = "NO_PARENT",
+    CHILDREN_SET = "CHILDREN_SET",
+    BLUEPRINT_SET = "BLUEPRINT_SET",
+    HANGOUT = "HANGOUT",
+    PACIFIST = "PACIFIST",
+    ALWAYS_KITE = "ALWAYS_KITE",
+    ALWAYS_RUSH = "ALWAYS_RUSH",
+    ALWAYS_MANEUVER = "ALWAYS_MANEUVER",
+    FIRE_AT_WILL = "FIRE_AT_WILL",
+
+
+Explosive Features
+    ENABLED = "ENABLED",
+    PROXIMITY = "PROXIMITY",
+    FINAL = "FINAL",
+    FRAG_PROXIMITY = "FRAG_PROXIMITY",
+    FRAG_FINAL = "FRAG_FINAL",
+    FRAG_IMPACT = "FRAG_IMPACT",
+
+
+Asteroidflags
+    EXPLOSIVE = "EXPLOSIVE",
+    PENROSE = "PENROSE",
+    SQUARE = "SQUARE",
+    HEXAGON = "HEXAGON",
+    TRIANGLE = "TRIANGLE",
+    OCTAGON = "OCTAGON",
+    UNIFORM_SIZE = "UNIFORM_SIZE",
+    UNIFORM_TYPE = "UNIFORM_TYPE",
+    SIZE_IMPORTANT = "SIZE_IMPORTANT",
+    NO_RANDOMIZE_FLAGS = "NO_RANDOMIZE_FLAGS",

@@ -1,0 +1,4 @@
+In the ship folder file you can store all of the ships for your mod. Be sure to name them correctly in-game and in the files!
+You can export ships in game in the ship editor screen using the export button.
+
+FILE FORMAT: <faction id>_<name of the ship>
